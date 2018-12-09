@@ -1,15 +1,14 @@
 package collegeAppClassifier.criteria;
-
 import java.util.List;
 
 import collegeAppClassifier.Applicant;
 
-public class FeloniesGreaterThanCriteria implements IAppCriteria {
+public class CriteriaState implements IAppCriteria {
 
-	private int felonyMin;
+	private String state;
 	
-	public FeloniesGreaterThanCriteria(int felonyMin) {
-		this.felonyMin = felonyMin;
+	public CriteriaState(String state) {
+		this.state = state;
 	}
 	
 	@Override

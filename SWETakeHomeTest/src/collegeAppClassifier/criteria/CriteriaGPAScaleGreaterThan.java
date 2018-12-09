@@ -1,14 +1,15 @@
 package collegeAppClassifier.criteria;
+
 import java.util.List;
 
 import collegeAppClassifier.Applicant;
 
-public class SATGreaterThanCriteria implements IAppCriteria {
+public class CriteriaGPAScaleGreaterThan implements IAppCriteria {
 
-	private int scoreMin;
+	private double scaleMin;
 	
-	public SATGreaterThanCriteria(int scoreMin) {
-		this.scoreMin = scoreMin;
+	public CriteriaGPAScaleGreaterThan(double scaleMin) {
+		this.scaleMin = scaleMin;
 	}
 	
 	@Override

@@ -1,15 +1,14 @@
 package collegeAppClassifier.criteria;
-
 import java.util.List;
 
 import collegeAppClassifier.Applicant;
 
-public class ACTGreaterThanCriteria implements IAppCriteria {
+public class CriteriaAgeLessThan implements IAppCriteria {
 
-	private int scoreMin;
+private int ageMax;
 	
-	public ACTGreaterThanCriteria(int scoreMin) {
-		this.scoreMin = scoreMin;
+	public CriteriaAgeLessThan(int ageMax) {
+		this.ageMax = ageMax;
 	}
 	
 	@Override

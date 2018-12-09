@@ -3,12 +3,12 @@ import java.util.List;
 
 import collegeAppClassifier.Applicant;
 
-public class AgeLessThanCriteria implements IAppCriteria {
+public class CriteriaAgeGreaterThan implements IAppCriteria {
 
-private int ageMax;
+	private int ageMin;
 	
-	public AgeLessThanCriteria(int ageMax) {
-		this.ageMax = ageMax;
+	public CriteriaAgeGreaterThan(int ageMin) {
+		this.ageMin = ageMin;
 	}
 	
 	@Override

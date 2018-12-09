@@ -4,12 +4,12 @@ import java.util.List;
 
 import collegeAppClassifier.Applicant;
 
-public class GPAScaleGreaterThanCriteria implements IAppCriteria {
+public class CriteriaFeloniesGreaterThan implements IAppCriteria {
 
-	private double scaleMin;
+	private int felonyMin;
 	
-	public GPAScaleGreaterThanCriteria(double scaleMin) {
-		this.scaleMin = scaleMin;
+	public CriteriaFeloniesGreaterThan(int felonyMin) {
+		this.felonyMin = felonyMin;
 	}
 	
 	@Override
