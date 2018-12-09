@@ -1,0 +1,12 @@
+I designed this with the idea in mind that I work for a software company, not the school itself.
+Therefore, I reasoned other schools might come to us wanting the same technology, and made it easy to
+add both schools and criteria, and share criteria logic across schools if desired.  To do this I followed
+the filter design pattern.
+
+Assumptions:
+My school is named California University College, or CACU.
+Other colleges could potentially want to be added, and may want some of the same, and some different criteria.
+
+References:
+http://www.singhajit.com/filter-design-pattern/
+Christopher Okhravi: https://www.youtube.com/channel/UCbF-4yQQAWw-UnuCd2Azfzg
