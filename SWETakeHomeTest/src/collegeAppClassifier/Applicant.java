@@ -188,6 +188,9 @@ public class Applicant {
 	 * @param age the age to set
 	 */
 	public void setAge(Integer age) {
+		if(age == null) {
+			throw new IllegalArgumentException("Age cannot be null");
+		}
 		this.age = age;
 	}
 
@@ -202,6 +205,9 @@ public class Applicant {
 	 * @param lastName the lastName to set
 	 */
 	public void setLastName(String lastName) {
+		if(lastName == null) {
+			throw new IllegalArgumentException("Last Name cannot be null");
+		}
 		this.lastName = lastName;
 	}
 
@@ -216,6 +222,9 @@ public class Applicant {
 	 * @param firstName the firstName to set
 	 */
 	public void setFirstName(String firstName) {
+		if(firstName == null) {
+			throw new IllegalArgumentException("First Name cannot be null");
+		}
 		this.firstName = firstName;
 	}
 

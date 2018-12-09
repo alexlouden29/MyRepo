@@ -9,6 +9,7 @@ public class CriteriaACTGreaterThan implements IAppCriteria {
 
 	private final int scoreMin;
 	
+	//Constructor
 	public CriteriaACTGreaterThan(int scoreMin) {
 		this.scoreMin = scoreMin;
 	}
@@ -19,6 +20,10 @@ public class CriteriaACTGreaterThan implements IAppCriteria {
 	}
 
 	private boolean actGreaterThan(Applicant app) {
-		return app.getScoreACT() > scoreMin;
+		Integer appACT = app.getScoreACT();
+		if(appACT != null) {
+			return appACT > scoreMin;
+		}
+		return false;
 	}
 }
