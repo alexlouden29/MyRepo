@@ -4,33 +4,24 @@ import java.util.List;
 
 import collegeAppClassifier.classifier.IAppClassifier;
 
-//Review if this should be a facade, standard facade design
+/* Facade isn't completely necessary, but could be used to add on other tasks,
+ * and slightly simplifies use for testing and client.
+ */
 public class CollegeAppClassifierFacade {
-	private List<Applicant> applicants;
-	private String schoolName;
 	
-	public CollegeAppClassifierFacade(List<Applicant> applicants, String schoolName) {
-		this.applicants = applicants;
-		this.schoolName = schoolName;
+	//Constructor
+	public CollegeAppClassifierFacade() {
+		//Do Nothing
 	}
 	
-	public void classify() {
+	/**
+	 * Classify all of the applicants given using the classifier for the given school
+	 * @param apps
+	 * @param schoolName
+	 */
+	public void classify(List<Applicant> apps, String schoolName) {
 		AppClassifierFactory classifierFactory = AppClassifierFactory.getInstance();
 		IAppClassifier classifier = classifierFactory.getApplicantClassifier(schoolName);
-		classifier.classify(applicants);
+		classifier.classify(apps);
 	}
-	
-	public List<Applicant> getApplicants(){
-		return applicants;
-	}
-	
-	public void setApplicants(List<Applicant> applicants) {
-		this.applicants = applicants;
-	}
-	
-	public String getSchoolName() {
-		return schoolName;
-	}
-	
-	//No setter for school name, should create new runner
 }

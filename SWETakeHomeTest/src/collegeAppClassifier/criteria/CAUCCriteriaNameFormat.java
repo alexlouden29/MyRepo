@@ -5,10 +5,15 @@ import static java.util.stream.Collectors.toList;
 
 import collegeAppClassifier.Applicant;
 
-public class CACUCriteriaNameFormat implements IAppCriteria {
+/**
+ * Checks if applicants name matches format required by CAUC
+ * @author alouden
+ *
+ */
+public class CAUCCriteriaNameFormat implements IAppCriteria {
 
 	//Default Constructor
-	public CACUCriteriaNameFormat() {
+	public CAUCCriteriaNameFormat() {
 		//Do Nothing
 	}
 	
@@ -22,13 +27,29 @@ public class CACUCriteriaNameFormat implements IAppCriteria {
 		return legalNameFormat(app.getFirstName()) && legalNameFormat(app.getLastName());
 	}
 	
-	//Checks if name has first letter upper case, rest lower case.
+	//Check name format
 	private boolean legalNameFormat(String name) {
+		
+		//Check for blank string
+		if(name.equals("")) {
+			return false;
+		}
+		
+		//Check for invalid characters
+		char[] chars = name.toCharArray();
+		for(char c : chars) {
+			if(!Character.isLetter(c)) {
+				return false;
+			}
+		}
+		
+		//Check for proper capitalization
 		String first = name.substring(0, 1);
 		String second = name.substring(1);
-		if(first.equals(first.toUpperCase()) && second.equals(second.toLowerCase())) {
-			return true;
+		if(!first.equals(first.toUpperCase()) || !second.equals(second.toLowerCase())) {
+			return false;
 		}
-		return false;
+		
+		return true;
 	}
 }

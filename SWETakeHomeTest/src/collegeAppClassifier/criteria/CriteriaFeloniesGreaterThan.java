@@ -5,8 +5,13 @@ import static java.util.stream.Collectors.toList;
 
 import collegeAppClassifier.Applicant;
 
+/**
+ * @author alouden
+ *
+ */
 public class CriteriaFeloniesGreaterThan implements IAppCriteria {
 
+	//App number of felonies must be greater than this to pass
 	private final int felonyMin;
 	
 	//Constructor

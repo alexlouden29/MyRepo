@@ -5,8 +5,13 @@ import static java.util.stream.Collectors.toList;
 
 import collegeAppClassifier.Applicant;
 
+/**
+ * @author alouden
+ *
+ */
 public class CriteriaAgeGreaterThan implements IAppCriteria {
 
+	//App age must be greater than this to pass
 	private final int ageMin;
 	
 	//Constructor

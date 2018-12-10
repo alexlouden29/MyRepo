@@ -5,9 +5,13 @@ import static java.util.stream.Collectors.toList;
 
 import collegeAppClassifier.Applicant;
 
-
+/**
+ * @author alouden
+ *
+ */
 public class CriteriaSATGreaterThan implements IAppCriteria {
 
+	//App SAT score must be greater than this to pass
 	private final int scoreMin;
 	
 	//Constructor

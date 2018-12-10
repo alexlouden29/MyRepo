@@ -5,8 +5,13 @@ import static java.util.stream.Collectors.toList;
 
 import collegeAppClassifier.Applicant;
 
+/**
+ * @author alouden
+ *
+ */
 public class CriteriaState implements IAppCriteria {
 
+	//App must be from this state to pass
 	private final String stateCd;
 	
 	//Constructor

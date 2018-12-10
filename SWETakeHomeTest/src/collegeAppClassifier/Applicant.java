@@ -1,5 +1,8 @@
 package collegeAppClassifier;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Represents a student application snapshot, used for classification
  * @author alouden
@@ -14,15 +17,18 @@ public class Applicant {
 	private Double scaleGPA = null;
 	
 	//Personal Details
-	private Integer age;
-	private String lastName;
-	private String firstName;
+	private Integer age; //Required
+	private String lastName; //Required
+	private String firstName; //Required
 	private String stateCd = null;
 	
 	//If more detailed crime reporting becomes necessary, change this to a crime object and track details
 	private Integer numFelonies = null;
 	
 	private Status status = Status.NULL;
+	
+	//Can be used as a reason for any type of status if desired
+	private ArrayList<String> reasons = new ArrayList<>();
 	
 	//Lock status types and descriptions
 	public enum Status {
@@ -41,7 +47,7 @@ public class Applicant {
 	/**
 	 * Full CTOR.  
 	 * Required Fields: firstName, lastName, age
-	 * Optional Fields not needed can be set to Null
+	 * Optional Fields: fields not needed can be set to Null
 	 * @param scoreSAT
 	 * @param scoreACT
 	 * @param applicantGPA
@@ -52,10 +58,10 @@ public class Applicant {
 	 * @param stateCd
 	 * @param numFelonies
 	 */
-	public Applicant(String lastName, String firstName, Integer age, Integer scoreSAT, Integer scoreACT, Double applicantGPA, Double scaleGPA, String stateCd, Integer numFelonies) {
+	public Applicant(String firstName, String lastName, Integer age, Integer scoreSAT, Integer scoreACT, Double applicantGPA, Double scaleGPA, String stateCd, Integer numFelonies) {
 		
 		//Validate inputs
-		//TODO: Ask division if these should be criteria, or allowed
+		//TODO: Ask division if these should be criteria, or allowed.  Or if other validation is desired
 		if(firstName == null || lastName == null || age == null) {
 			throw new IllegalArgumentException("Mising required parameters");
 		}
@@ -78,7 +84,6 @@ public class Applicant {
 		this.scoreACT = scoreACT;
 		this.applicantGPA = applicantGPA;
 		this.scaleGPA = scaleGPA;
-		
 		this.stateCd = stateCd;
 		this.numFelonies = numFelonies;
 	}
@@ -102,6 +107,25 @@ public class Applicant {
 	}
 
 	/************ Getters/Setters ************/
+	
+	/**
+	 * Add reason to array of reasons for status
+	 * @param reason
+	 */
+	public void addReason(String reason) {
+		reasons.add(reason);
+	}
+	
+	/**
+	 * Deletes all reasons saved to an applicant
+	 */
+	public void clearReasons() {
+		reasons.clear();
+	}
+	
+	public ArrayList<String> getReasons() {
+		return reasons;
+	}
 	
 	public void setStatus(Status status) {
 		this.status = status;
@@ -254,5 +278,69 @@ public class Applicant {
 	 */
 	public void setNumFelonies(Integer numFelonies) {
 		this.numFelonies = numFelonies;
+	}
+
+	/** 
+	 * Eclipse generated .equals method.  Used by .contains() and .distinct()
+	 * @param obj the objec to compare this to
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Applicant))
+			return false;
+		Applicant other = (Applicant) obj;
+		if (age == null) {
+			if (other.age != null)
+				return false;
+		} else if (!age.equals(other.age))
+			return false;
+		if (applicantGPA == null) {
+			if (other.applicantGPA != null)
+				return false;
+		} else if (!applicantGPA.equals(other.applicantGPA))
+			return false;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		if (numFelonies == null) {
+			if (other.numFelonies != null)
+				return false;
+		} else if (!numFelonies.equals(other.numFelonies))
+			return false;
+		if (scaleGPA == null) {
+			if (other.scaleGPA != null)
+				return false;
+		} else if (!scaleGPA.equals(other.scaleGPA))
+			return false;
+		if (scoreACT == null) {
+			if (other.scoreACT != null)
+				return false;
+		} else if (!scoreACT.equals(other.scoreACT))
+			return false;
+		if (scoreSAT == null) {
+			if (other.scoreSAT != null)
+				return false;
+		} else if (!scoreSAT.equals(other.scoreSAT))
+			return false;
+		if (stateCd == null) {
+			if (other.stateCd != null)
+				return false;
+		} else if (!stateCd.equals(other.stateCd))
+			return false;
+		if (status != other.status)
+			return false;
+		return true;
 	}
 }

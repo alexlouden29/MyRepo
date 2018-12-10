@@ -3,10 +3,16 @@ import java.util.List;
 
 import collegeAppClassifier.Applicant;
 
+/**
+ *  Allows combination of criteria.  If app meets all criteria input, it will pass
+ * @author alouden
+ *
+ */
 public class AppAndCriteria implements IAppCriteria {
 
-	private IAppCriteria[] criterias;
+	private final IAppCriteria[] criterias;
 	
+	//Constructor
 	public AppAndCriteria(IAppCriteria... criterias) {
 		this.criterias = criterias;
 	}
@@ -15,6 +21,7 @@ public class AppAndCriteria implements IAppCriteria {
 	public List<Applicant> meets(List<Applicant> apps) {
 		List<Applicant> filteredApps = apps;
 		
+		//Filter list until only those meeting all conditions are left
 		for(IAppCriteria criteria : criterias) {
 			filteredApps = criteria.meets(filteredApps);
 		}

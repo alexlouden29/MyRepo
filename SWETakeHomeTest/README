@@ -4,15 +4,20 @@ add both schools and criteria, and share criteria logic across schools if desire
 the filter (criteria) design pattern.
 
 Assumptions:
-My school is named California University College, or CACU.
+For the GPA instant Reject, the prompt states that GPA's BELOW 70% should be rejected, but the example given
+is EXACTLY 70%.  I opted to follow the wording, so the example would actually not be rejected
+
+My school is named California University College, or CAUC.
+
 Other colleges could potentially want to be added, and may want some of the same, and some different criteria.
+
 I made some logical assumptions about required fields for an applicant, and some basic validation.
 
 
 References:
 http://www.singhajit.com/filter-design-pattern/
 This source brought the filter pattern to my attention, and I followed it's technique with lists and lambdas.
-After learning about lambdas in my java course, I couldn't pass up a good opportunity to actually apply them!
+After learning about lambdas in my java course, I couldn't pass up a good opportunity to actually apply them.
 
 Christopher Okhravi: https://www.youtube.com/channel/UCbF-4yQQAWw-UnuCd2Azfzg
 I used this channel to learn about several design patterns, singleton and Factory are most relevant here.

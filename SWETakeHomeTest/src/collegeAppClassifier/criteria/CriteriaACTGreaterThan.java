@@ -5,8 +5,13 @@ import static java.util.stream.Collectors.toList;
 
 import collegeAppClassifier.Applicant;
 
+/**
+ * @author alouden
+ *
+ */
 public class CriteriaACTGreaterThan implements IAppCriteria {
 
+	//App ACT score must be greater than this amount to pass
 	private final int scoreMin;
 	
 	//Constructor

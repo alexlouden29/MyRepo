@@ -6,6 +6,10 @@ import static java.util.stream.Collectors.toList;
 import collegeAppClassifier.Applicant;
 import collegeAppClassifier.Applicant.Status;
 
+/**
+ * @author alouden
+ *
+ */
 public class CriteriaNotRejected implements IAppCriteria {
 
 	//Default Constructor
@@ -19,7 +23,7 @@ public class CriteriaNotRejected implements IAppCriteria {
 	}
 	
 	private boolean isNotRejected(Applicant app) {
-		return app.getStatus().equals(Status.REJECT);
+		return !app.getStatus().equals(Status.REJECT);
 	}
 
 }
